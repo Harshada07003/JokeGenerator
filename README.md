@@ -25,7 +25,7 @@ Installation
 4]Open your browser and navigate to http://localhost:3000.
 
 Public API
-This project uses [Public Joke API](API link).
+This project uses [https://sv443.net/jokeapi/v2/](API link).
 
 Project Structure
 joke-generator/
