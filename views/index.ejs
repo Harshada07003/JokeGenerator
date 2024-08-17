@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Joke Generator</title>
+</head>
+
+<body>
+    <h1>Let's Smile with Us 🤣</h1>
+    <div class="container">
+        <form action="/" class="form" method="post">
+            <select name="category" class="form-select">
+                <option value="" disabled selected>Select category</option>
+                <option value="Any">Any</option>
+                <option value="Programming">Programming</option>
+                <option value="Miscellaneous">Misc</option>
+                <option value="Dark">Dark</option>
+                <option value="Pun">Pun</option>
+                <option value="Spooky">Spooky</option>
+                <option value="Christmas">Christmas</option>
+            </select>
+            <select name="jokeType" class="form-select">
+                <option value="" disabled selected>Joke Type</option>
+                <option value="single">Single</option>
+                <option value="twopart">Two-Part</option>
+            </select>
+            <select name="amount" class="form-select">
+                <option value="" disabled selected>select the number of jokes </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button type="submit" class="submit-form">GO</button>
+        </form>
+    </div>
+
+    <% if (data) { %>
+    <section class="card">
+        <% if (Array.isArray(data.jokes)) { %>
+            <% data.jokes.forEach(joke => { %>
+                <% if (joke.type === 'single') { %>
+                    <p><%= joke.joke %></p>
+                <% } else if (joke.type === 'twopart') { %>
+                    <p><%= joke.setup %></p>
+                    <p><%= joke.delivery %></p>
+                <% } %>
+                <br>
+                <hr>
+            <% }) %>
+        <% } else { %>
+            <% if (data.type === 'single') { %>
+                <p><%= data.joke %></p>
+            <% } else if (data.type === 'twopart') { %>
+                <p><%= data.setup %></p>
+                <p><%= data.delivery %></p>
+            <% } %>
+            <br>
+            <hr>
+        <% } %>
+    </section>
+    <% } %>
+
+    <% if (error) { %>
+    <p><%= error %></p>
+    <% } %>
+</body>
+
+</html>
