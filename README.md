@@ -13,8 +13,8 @@ Make sure you have Node.js installed on your machine.
 
 Installation
 1] Clone the repository:
-    git clone https://github.com/yourusername/joke-generator.git
-    cd joke-generator
+    git clone https://github.com/Harshada07003/JokeGenerator
+    cd JokeGenerator
     
 2] Install dependencies:
    npm install
