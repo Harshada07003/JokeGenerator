@@ -1,2 +1,2 @@
 # JokeGenerator
-jokr generator application using public API
+joke generator application using public API
